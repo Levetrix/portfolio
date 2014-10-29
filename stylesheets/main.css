@@ -1,0 +1,405 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@CHARSET "ISO-8859-1";
+/***
+* CSS3 FLIP CARDS
+* Markup for an element that a user can hover to reveal content on the back, like a card
+* Browser Support: Safari, Firefox, Chrome, IE8+, and Touch Devices; (IE9 and below will not have any flip effect but will just change on hover)
+***/
+/* line 9, ../sass/transform/_flip.scss */
+.flip-card {
+  display: block;
+  position: relative;
+  z-index: 1000;
+}
+/* line 15, ../sass/transform/_flip.scss */
+.flip-card .card-front,
+.flip-card .card-back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 900ms;
+  -moz-transition: -moz-transform 900ms;
+  -o-transition: -o-transform 900ms;
+  transition: transform 900ms;
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+/* line 24, ../sass/transform/_flip.scss */
+.flip-card .card-front {
+  -webkit-transform: perspective(600) rotateY(0deg) translateX(0);
+  -moz-transform: perspective(600) rotateY(0deg) translateX(0);
+  -ms-transform: perspective(600) rotateY(0deg) translateX(0);
+  -o-transform: perspective(600) rotateY(0deg) translateX(0);
+  transform: perspective(600) rotateY(0deg) translateX(0);
+  z-index: 900;
+}
+/* line 29, ../sass/transform/_flip.scss */
+.flip-card .card-back {
+  -webkit-transform: perspective(600) rotateY(-180deg) translateX(100%);
+  -moz-transform: perspective(600) rotateY(-180deg) translateX(100%);
+  -ms-transform: perspective(600) rotateY(-180deg) translateX(100%);
+  -o-transform: perspective(600) rotateY(-180deg) translateX(100%);
+  transform: perspective(600) rotateY(-180deg) translateX(100%);
+  /*
+  	@include create-transform(false, 0.7, 0.7, 0.7, 0, -180deg);	//	, 0, true, 289px, 0, 0, 0, 0, 0, 289px
+  */
+  z-index: 800;
+}
+/* line 38, ../sass/transform/_flip.scss */
+.flip-card:hover .card-front, .flip-card.flip-card-now .card-front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* line 42, ../sass/transform/_flip.scss */
+.flip-card:hover .card-back, .flip-card.flip-card-now .card-back {
+  z-index: 950;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+/*** Just for show... ***/
+/* line 55, ../sass/transform/_flip.scss */
+.flip-card {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  color: #fff;
+  cursor: pointer;
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 100px;
+  max-width: 400px;
+  /*.card-back,*/
+}
+/* line 67, ../sass/transform/_flip.scss */
+.flip-card .card-front,
+.flip-card .card-back {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 71, ../sass/transform/_flip.scss */
+.flip-card .card-front {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 75, ../sass/transform/_flip.scss */
+.flip-card .card-shadow {
+  -webkit-box-shadow: 0 0 80px rgba(0, 0, 0, 0.8) inset;
+  -moz-box-shadow: 0 0 80px rgba(0, 0, 0, 0.8) inset;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.8) inset;
+  /*background-color: #499bea; // Old browsers*/
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url('/stylesheets/fonts/../../fonts/OpenSans-regular.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/OpenSans-regular.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/OpenSans-regular.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/OpenSans-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "OpenSansLt";
+  src: url('/stylesheets/fonts/../../fonts/opensans-light-webfont.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.woff') format('woff'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.eot') format('embedded-opentype'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "OpenSansLt_IE";
+  src: url('/stylesheets/fonts/../../fonts/opensans-light-webfont.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.woff') format('woff'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.eot') format('embedded-opentype'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "OpenSansLtCn";
+  src: url('/stylesheets/fonts/../../fonts/OpenSans-CondLight.ttf') format('truetype'), url('/stylesheets/fonts/examples/bgrove.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "OpenSans_IE";
+  src: url('/stylesheets/fonts/../../fonts/opensans-regular-webfont.eot') format('embedded-opentype'), url('/stylesheets/fonts/examples/bgrove.otf') format('opentype');
+}
+
+/* line 32, ../sass/main.scss */
+.nothing {
+  color: red;
+}
+
+/* line 36, ../sass/main.scss */
+html, body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 42, ../sass/main.scss */
+body {
+  font-family: "Open Sans";
+  font-weight: 200;
+}
+
+/* line 47, ../sass/main.scss */
+h1, h2, h3, h4, h5 {
+  font-family: "Open Sans";
+  font-weight: 200;
+  margin: 0;
+}
+
+/* line 53, ../sass/main.scss */
+div {
+  padding: 0;
+  margin: 0;
+  border: 0px;
+}
+
+@-webkit-keyframes blink {
+  /* line 61, ../sass/main.scss */
+  0% {
+    color: #232323;
+  }
+
+  /* line 62, ../sass/main.scss */
+  24% {
+    color: #232323;
+  }
+
+  /* line 63, ../sass/main.scss */
+  25% {
+    color: rgba(35, 35, 35, 0);
+  }
+
+  /* line 64, ../sass/main.scss */
+  74% {
+    color: rgba(35, 35, 35, 0);
+  }
+
+  /* line 65, ../sass/main.scss */
+  75% {
+    color: #232323;
+  }
+
+  /* line 66, ../sass/main.scss */
+  100% {
+    color: #232323;
+  }
+}
+
+/* line 70, ../sass/main.scss */
+.notAnimating:after {
+  color: #232323;
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  transition-timing-function: cubic-bezier(0.99, 0, 0.12, 1);
+}
+
+/* line 80, ../sass/main.scss */
+.type:after {
+  display: inline-block;
+  font-size: 1.2em;
+  content: "_";
+}
+
+/* line 86, ../sass/main.scss */
+.Animating:after {
+  color: #222;
+}
+
+/* line 90, ../sass/main.scss */
+.preloader {
+  position: fixed;
+  width: 100%;
+  padding-top: 5.5rem;
+  height: 40px;
+}
+
+/* line 96, ../sass/main.scss */
+.preloader {
+  z-index: 2;
+}
+/* line 99, ../sass/main.scss */
+.preloader > #type {
+  display: block;
+  text-align: center;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5em;
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #333;
+}
+/* line 110, ../sass/main.scss */
+.preloader > #type.static {
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 1.55s;
+  -moz-transition-duration: 1.55s;
+  -o-transition-duration: 1.55s;
+  transition-duration: 1.55s;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  transition-delay: 0;
+}
+/* line 115, ../sass/main.scss */
+.preloader > #type.static.white {
+  color: #fff;
+}
+
+/* line 122, ../sass/main.scss */
+.loaded {
+  width: 400px;
+  padding-top: .5rem;
+  -webkit-transition-property: width, padding;
+  -moz-transition-property: width, padding;
+  -o-transition-property: width, padding;
+  transition-property: width, padding;
+  -webkit-transition-duration: 1.35s;
+  -moz-transition-duration: 1.35s;
+  -o-transition-duration: 1.35s;
+  transition-duration: 1.35s;
+}
+/* line 128, ../sass/main.scss */
+.loaded #type {
+  font-size: 1.65rem;
+  -webkit-transition-property: font-size;
+  -moz-transition-property: font-size;
+  -o-transition-property: font-size;
+  transition-property: font-size;
+  -webkit-transition-duration: 1.1s;
+  -moz-transition-duration: 1.1s;
+  -o-transition-duration: 1.1s;
+  transition-duration: 1.1s;
+  -webkit-transition-delay: 0.25s;
+  -moz-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+/* line 138, ../sass/main.scss */
+.postload {
+  background-color: #333333;
+  height: 100vh;
+  width: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 144, ../sass/main.scss */
+.postload.visible {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.65s;
+  -moz-transition-duration: 0.65s;
+  -o-transition-duration: 0.65s;
+  transition-duration: 0.65s;
+}
+
+/* line 152, ../sass/main.scss */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.0rem;
+  background-color: rgba(51, 51, 51, 0.95);
+  z-index: 1;
+}
+
+/* line 162, ../sass/main.scss */
+#myFace {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100vh - 2.5rem);
+  background-image: url("../img/Tyler1.jpg");
+  background-position-y: 70%;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-top: 12rem;
+  padding-left: 4rem;
+}
+/* line 175, ../sass/main.scss */
+#myFace h2 {
+  display: block;
+  max-width: 800px;
+  text-align: left;
+  color: white;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+/* line 185, ../sass/main.scss */
+.shader {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.25);
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 194, ../sass/main.scss */
+#about {
+  width: 100%;
+  min-height: 500px;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  padding-top: 6rem;
+  padding-left: 4rem;
+  padding-bottom: 4rem;
+}
+/* line 205, ../sass/main.scss */
+#about h2 {
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+}
+/* line 212, ../sass/main.scss */
+#about .info {
+  margin-left: 4rem;
+}
+/* line 215, ../sass/main.scss */
+#about .info p {
+  display: block;
+  max-width: 1050px;
+  font-family: "Open Sans";
+  font-weight: 200;
+  font-size: 1.35rem;
+  line-height: 1.8em;
+  margin-bottom: 4rem;
+}
+/* line 229, ../sass/main.scss */
+#about .info ul li {
+  font-size: 1.45em;
+  padding-bottom: .5rem;
+}
