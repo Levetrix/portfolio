@@ -56,7 +56,7 @@ $(document).ready(function(){
 				typeElement.addClass("Animating");
 				typeElement.removeClass("notAnimating");
 				console.log("newDelay");
-				var newDelay = 65;
+				var newDelay = 60;
 				console.log(newDelay);
 				newDelay = newDelay * (letterDifficulty[newLetter.toLowerCase()] || letterDifficulty.other);
 				console.log(newDelay);
@@ -84,8 +84,8 @@ $(document).ready(function(){
 				window.setTimeout(function(){
 					$(".postload").addClass("visible");
 					$("#type").addClass("static").addClass("white");
-				},500);
-			},250);
+				},400);
+			},1200);
 		};
 		
 		
