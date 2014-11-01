@@ -1,0 +1,302 @@
+@CHARSET "ISO-8859-1";
+
+@import "compass/css3";
+@import "transform/settings";
+@import "transform/flip";
+
+//@import "font-awesome";
+//@import "font-awesome/variables";
+
+$green: #3c5346;
+$red: #872633;
+$yellow: #dfb655;
+$black: #272328;
+$purple: #2a1f26;
+$white: #f9f9f9;
+$blue: #3853C9;
+$charcoal: #333;
+$curse: "curse words here";
+
+
+$OpenSans: "OpenSans", "OpenSans_IE";
+$OpenSansLt: "OpenSansLt", "OpenSansLt_IE";
+
+@include font-face("OpenSans", font-files("../../fonts/OpenSans-regular.ttf", "../../fonts/OpenSans-regular.ttf", "../../fonts/OpenSans-regular.ttf", "../../fonts/OpenSans-regular.ttf"));
+@include font-face("OpenSansLt", font-files("../../fonts/opensans-light-webfont.ttf", "../../fonts/opensans-light-webfont.woff", "../../fonts/opensans-light-webfont.eot", "../../fonts/opensans-light-webfont.svg"));
+@include font-face("OpenSansLt_IE", font-files("../../fonts/opensans-light-webfont.ttf", "../../fonts/opensans-light-webfont.woff", "../../fonts/opensans-light-webfont.eot", "../../fonts/opensans-light-webfont.svg"));
+@include font-face("OpenSansLtCn", font-files("../../fonts/OpenSans-CondLight.ttf", "examples/bgrove.otf"));
+@include font-face("OpenSans_IE", font-files("../../fonts/opensans-regular-webfont.eot", "examples/bgrove.otf"));
+@include font-face("RalewayThin", font-files("../../typing/fonts/Raleway-Thin.otf"));
+@include font-face("RalewayExtraLight", font-files("../../typing/fonts/Raleway-ExtraLight.otf"));
+@include font-face("RalewayLight", font-files("../../typing/fonts/Raleway-Light.otf"));
+@include font-face("RalewayRegular", font-files("../../typing/fonts/Raleway-Regular.otf"));
+@include font-face("RalewayMedium", font-files("../../typing/fonts/Raleway-Medium.otf"));
+@include font-face("RalewaySemiBold", font-files("../../typing/fonts/Raleway-SemiBold.otf"));
+@include font-face("RalewayBold", font-files("../../typing/fonts/Raleway-Bold.otf"));
+@include font-face("RalewayExtraBold", font-files("../../typing/fonts/Raleway-ExtraBold.otf"));
+@include font-face("RalewayHeavy", font-files("../../typing/fonts/Raleway-Heavy.otf"));
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+.nothing{
+  color:red;
+}
+
+html, body {
+	width:100%;
+	padding:0;
+	margin:0;
+}
+
+body {
+	font-family:"Open Sans";
+	font-weight:200; 
+}
+
+h1,h2,h3,h4,h5 {
+  font-family:"RalewayRegular";
+  font-weight:200; 
+  margin:0;
+}
+
+div {
+	padding:0;
+	margin:0;
+	border:0px; 
+	
+}
+
+@-webkit-keyframes blink {
+  0% {color:rgba(35,35,35,1)};
+  24% {color:rgba(35,35,35,1)};
+  25%{color:rgba(35,35,35,0)};
+  74%{color:rgba(35,35,35,0)};
+  75% {color:rgba(35,35,35,1)};
+  100% {color:rgba(35,35,35,1)};
+  
+}
+
+.notAnimating:after{
+  color:rgba(35,35,35,1);
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  transition-timing-function:cubic-bezier(.99,0,.12,1);
+  
+}
+
+.type:after{
+  display:inline-block;
+  font-size:1.2em;
+  content:"_";
+}
+
+.Animating:after{
+  color:#222;
+}
+
+.preloader {
+  position:fixed;
+  width:100%;
+  padding-top:5.5rem;
+  height:40px;
+}
+.preloader {
+  z-index:2;
+  
+  & > #type {
+    display:block;
+    text-align:center;
+    margin:0;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:2.5em;
+    font-family:"Open Sans";
+    font-weight:400; 
+    color:#333;
+    
+    &.static {
+      @include transition-property(color);
+      @include transition-duration(1.55s);
+      @include transition-delay(0);
+      
+      &.white {
+      color:#fff;        
+      }
+    }
+  }
+}
+
+.loaded {
+  width:400px;
+  padding-top:.5rem;
+  @include transition-property(width,padding);
+  @include transition-duration(1.35s);
+    
+  & #type {
+    font-size:1.65rem;
+    @include transition-property(font-size);
+    @include transition-duration(1.1s);
+    @include transition-delay(.25s);
+    
+  }
+}
+
+
+.postload {
+  background-color:$charcoal;
+  height:100vh;
+  width:100%;
+  @include opacity(0);
+  
+  &.visible {
+    @include opacity(1);
+    @include transition-property(opacity);
+    @include transition-duration(.65s);
+    
+  }
+}
+
+nav {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:4.0rem;
+  background-color:rgba($charcoal,.97);
+  z-index:1;
+}
+
+#myFace {
+  @include box-sizing(border-box);
+  width:100%;
+  height:calc(100vh - 2.5rem);
+  background-image: url("../img/Tyler1.jpg");
+  background-position-y:70%;
+  background-size:cover;
+  position:relative;
+  margin:0;
+  padding:0;
+  padding-top:12rem;
+  padding-left:4rem;
+  
+  & h2 {
+    display:block;
+    max-width:800px;
+    text-align:left;
+    color:white;
+    font-size:4rem;
+    font-weight:600;
+    font-family:"RalewaySemiBold";
+  }
+}
+
+.shader {
+  width:100%;
+  height:100%;
+  background-color:rgba($charcoal,.25);
+  position:absolute;
+  margin:0;
+  padding:0;
+}
+
+#about {
+  max-width:100%;
+  min-height:500px;
+  //background-color:$charcoal;
+  background-color:#fff;
+  padding:0;
+  margin:0;
+  padding-top:6rem;
+  padding-left:4rem;
+  padding-bottom:4rem;
+    
+  & h2 {
+    display:inline-block;
+    font-size:4rem;
+    font-weight:400;
+    text-align:center;    
+  }  
+    
+  & .info {
+    margin-left:4rem;
+    
+    & p {
+      display:block;
+      max-width:1050px;
+      font-family:"Open Sans";
+      font-weight:200;
+      font-size:1.35rem;
+      line-height:1.8em;
+      margin-bottom:4rem;
+      
+    }
+    
+    & ul {
+      //list-style-type:none;
+      
+      & li {
+        font-size:1.45em;
+        padding-bottom:.5rem;
+      }    
+    }
+  }
+}
+
+.button {
+  height:100px;
+  width:225px;
+  border:1px solid #666;
+  position:relative;
+  margin:4rem auto;
+  overflow:hidden;
+  
+  
+  &:before {
+    content:"";
+    width:300px;
+    height:300px;
+    background-color:rgba($blue,.65);
+    position:absolute;
+    left:-365px;
+    top:-150px;
+    @include rotate(45deg);
+    @include transition-duration(.5s);
+        
+  }
+  
+  &:after {
+    content:"";
+    width:300px;
+    height:300px;
+    background-color:rgba($blue,.65);
+    position:absolute;
+    right:-365px;
+    top:-150px;
+    @include rotate(45deg);
+    @include transition-duration(.5s);
+        
+  }
+  
+  &:hover {
+    
+    &:after {
+      right:50%;
+      
+    }
+    
+    &:before {
+      left:50%;
+      
+    }
+  }
+}
+  
+
+
+
+
+
+
+

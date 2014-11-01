@@ -68,7 +68,7 @@ $(document).ready(function(){
 			}
 		};
 		//var typewriterIntervalPointer = window.setInterval(typewriterIntervalFunction,250);
-		var typewriterTimeoutPointer = window.setTimeout(typewriterTimeoutFunction,1900);
+		var typewriterTimeoutPointer = window.setTimeout(typewriterTimeoutFunction,1250);
 		var clearTypewriting = function(element) {
 			//console.log("Clearing interval...");
 			//window.clearInterval(typewriterIntervalPointer);
@@ -85,7 +85,7 @@ $(document).ready(function(){
 					$(".postload").addClass("visible");
 					$("#type").addClass("static").addClass("white");
 				},500);
-			},1500);
+			},250);
 		};
 		
 		
