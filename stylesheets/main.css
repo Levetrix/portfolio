@@ -379,7 +379,7 @@ nav {
 /* line 279, ../sass/main.scss */
 #about .info {
   margin-left: 4rem;
-  display: none;
+ // display: none;
 }
 /* line 283, ../sass/main.scss */
 #about .info p {
