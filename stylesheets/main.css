@@ -1,30 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 @CHARSET "ISO-8859-1";
 
-@font-face {
-  font-family: "OpenSans";
-  src: url('/stylesheets/fonts/../../fonts/OpenSans-regular.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/OpenSans-regular.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/OpenSans-regular.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/OpenSans-regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: "OpenSansLt";
-  src: url('/stylesheets/fonts/../../fonts/opensans-light-webfont.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.woff') format('woff'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.eot') format('embedded-opentype'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.svg') format('svg');
-}
-
-@font-face {
-  font-family: "OpenSansLt_IE";
-  src: url('/stylesheets/fonts/../../fonts/opensans-light-webfont.ttf') format('truetype'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.woff') format('woff'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.eot') format('embedded-opentype'), url('/stylesheets/fonts/../../fonts/opensans-light-webfont.svg') format('svg');
-}
-
-@font-face {
-  font-family: "OpenSansLtCn";
-  src: url('/stylesheets/fonts/../../fonts/OpenSans-CondLight.ttf') format('truetype'), url('/stylesheets/fonts/examples/bgrove.otf') format('opentype');
-}
-
-@font-face {
-  font-family: "OpenSans_IE";
-  src: url('/stylesheets/fonts/../../fonts/opensans-regular-webfont.eot') format('embedded-opentype'), url('/stylesheets/fonts/examples/bgrove.otf') format('opentype');
-}
 
 @font-face {
   font-family: "RalewayThin";
@@ -71,32 +47,32 @@
   src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-Heavy.otf') format('opentype');
 }
 
-/* line 41, ../sass/main.scss */
+/* line 36, ../sass/main.scss */
 .nothing {
   color: red;
 }
 
-/* line 45, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
 html, body {
   width: 100%;
   padding: 0;
   margin: 0;
 }
 
-/* line 51, ../sass/main.scss */
+/* line 46, ../sass/main.scss */
 body {
   font-family: "OpenSans";
   font-weight: 200;
 }
 
-/* line 56, ../sass/main.scss */
+/* line 51, ../sass/main.scss */
 h1, h2, h3, h4, h5 {
   font-family: "RalewayRegular";
   font-weight: 200;
   margin: 0;
 }
 
-/* line 62, ../sass/main.scss */
+/* line 57, ../sass/main.scss */
 div {
   padding: 0;
   margin: 0;
@@ -104,38 +80,38 @@ div {
 }
 
 @-webkit-keyframes blink {
-  /* line 70, ../sass/main.scss */
+  /* line 65, ../sass/main.scss */
   0% {
     color: #232323;
   }
 
-  /* line 71, ../sass/main.scss */
+  /* line 66, ../sass/main.scss */
   24% {
     color: #232323;
   }
 
-  /* line 72, ../sass/main.scss */
+  /* line 67, ../sass/main.scss */
   25% {
     color: rgba(35, 35, 35, 0);
   }
 
-  /* line 73, ../sass/main.scss */
+  /* line 68, ../sass/main.scss */
   74% {
     color: rgba(35, 35, 35, 0);
   }
 
-  /* line 74, ../sass/main.scss */
+  /* line 69, ../sass/main.scss */
   75% {
     color: #232323;
   }
 
-  /* line 75, ../sass/main.scss */
+  /* line 70, ../sass/main.scss */
   100% {
     color: #232323;
   }
 }
 
-/* line 79, ../sass/main.scss */
+/* line 74, ../sass/main.scss */
 .notAnimating:after {
   color: #232323;
   -webkit-animation-name: blink;
@@ -145,19 +121,19 @@ div {
   transition-timing-function: cubic-bezier(0.99, 0, 0.12, 1);
 }
 
-/* line 89, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 .type:after {
   display: inline-block;
   font-size: 1.2em;
   content: "_";
 }
 
-/* line 95, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 .Animating:after {
   color: #222;
 }
 
-/* line 99, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 .preloader {
   position: fixed;
   width: 100%;
@@ -165,11 +141,11 @@ div {
   height: 40px;
 }
 
-/* line 105, ../sass/main.scss */
+/* line 100, ../sass/main.scss */
 .preloader {
   z-index: 2;
 }
-/* line 108, ../sass/main.scss */
+/* line 103, ../sass/main.scss */
 .preloader > #type {
   display: block;
   text-align: center;
@@ -181,7 +157,7 @@ div {
   font-weight: 400;
   color: #333;
 }
-/* line 119, ../sass/main.scss */
+/* line 114, ../sass/main.scss */
 .preloader > #type.static {
   -webkit-transition-property: color;
   -moz-transition-property: color;
@@ -196,12 +172,12 @@ div {
   -o-transition-delay: 0.15;
   transition-delay: 0.15;
 }
-/* line 124, ../sass/main.scss */
+/* line 119, ../sass/main.scss */
 .preloader > #type.static.white {
   color: #fff;
 }
 
-/* line 131, ../sass/main.scss */
+/* line 126, ../sass/main.scss */
 .loaded {
   width: 400px;
   padding-top: .5rem;
@@ -214,7 +190,7 @@ div {
   -o-transition-duration: 0.8s;
   transition-duration: 0.8s;
 }
-/* line 137, ../sass/main.scss */
+/* line 132, ../sass/main.scss */
 .loaded #type {
   font-size: 1.65rem;
   -webkit-transition-property: font-size;
@@ -231,7 +207,7 @@ div {
   transition-delay: 0.12s;
 }
 
-/* line 147, ../sass/main.scss */
+/* line 142, ../sass/main.scss */
 .postload {
   background-color: #333333;
   height: 100vh;
@@ -239,7 +215,7 @@ div {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 153, ../sass/main.scss */
+/* line 148, ../sass/main.scss */
 .postload.visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -253,7 +229,7 @@ div {
   transition-duration: 0.45s;
 }
 
-/* line 161, ../sass/main.scss */
+/* line 156, ../sass/main.scss */
 nav {
   position: fixed;
   top: 0;
@@ -264,25 +240,61 @@ nav {
   z-index: 1;
 }
 
-/* line 171, ../sass/main.scss */
+/* line 166, ../sass/main.scss */
 .navMap {
   display: block;
   position: fixed;
   top: 8rem;
-  right: 6rem;
-  width: 6.5rem;
-  height: 16rem;
+  left: calc(100% - 10rem);
+  width: auto;
+  height: 0rem;
   color: #fff;
   z-index: 1;
+  -webkit-transition: left 0.45s ease-out, top 0.65s, -webkit-transform 0.45s linear;
+  -moz-transition: left 0.45s ease-out, top 0.65s, -moz-transform 0.45s linear;
+  -o-transition: left 0.45s ease-out, top 0.65s, -o-transform 0.45s linear;
+  transition: left 0.45s ease-out, top 0.65s, transform 0.45s linear;
 }
-/* line 181, ../sass/main.scss */
-.navMap.copy {
-  right: 8rem;
-  display: none;
+/* line 178, ../sass/main.scss */
+.navMap.horizontal {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: left 0.45s ease-out, top 0.85s, -webkit-transform 0.45s ease-out;
+  -moz-transition: left 0.45s ease-out, top 0.85s, -moz-transform 0.45s ease-out;
+  -o-transition: left 0.45s ease-out, top 0.85s, -o-transform 0.45s ease-out;
+  transition: left 0.45s ease-out, top 0.85s, transform 0.45s ease-out;
+  top: .5rem;
+  left: 28rem;
+  margin-top: 1.25rem;
 }
-/* line 186, ../sass/main.scss */
+/* line 185, ../sass/main.scss */
+.navMap.horizontal > a {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  margin-bottom: 2rem;
+}
+/* line 190, ../sass/main.scss */
+.navMap.horizontal > span {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 196, ../sass/main.scss */
 .navMap > a {
   font-family: "Open Sans";
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   font-weight: 400;
   color: #fff;
   text-decoration: none;
@@ -293,7 +305,7 @@ nav {
   padding-top: .35rem;
   font-size: 1.1rem;
 }
-/* line 199, ../sass/main.scss */
+/* line 210, ../sass/main.scss */
 .navMap > span {
   font-family: "RalewayRegular";
   display: block;
@@ -305,7 +317,7 @@ nav {
   height: .8rem;
 }
 
-/* line 211, ../sass/main.scss */
+/* line 222, ../sass/main.scss */
 #myFace {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -314,25 +326,29 @@ nav {
   height: 100vh;
   background-image: url("../img/Tyler1.jpg");
   background-position-y: 70%;
+  background-position-x: 100%;
+  line-height: 0px;
   background-size: cover;
   position: relative;
   margin: 0;
   padding: 0;
-  padding-top: 12rem;
-  padding-left: 4rem;
 }
-/* line 225, ../sass/main.scss */
+/* line 236, ../sass/main.scss */
 #myFace h2 {
   display: block;
+  position: absolute;
   max-width: 800px;
   text-align: left;
   color: white;
+  line-height: 1.25em;
   font-size: 4rem;
   font-weight: 600;
   font-family: "RalewaySemiBold";
+  margin-top: 12rem;
+  margin-left: 4rem;
 }
 
-/* line 236, ../sass/main.scss */
+/* line 252, ../sass/main.scss */
 .shader {
   width: 100%;
   height: 100%;
@@ -342,7 +358,7 @@ nav {
   padding: 0;
 }
 
-/* line 245, ../sass/main.scss */
+/* line 261, ../sass/main.scss */
 #about {
   max-width: 100%;
   min-height: 500px;
@@ -353,19 +369,19 @@ nav {
   padding-left: 4rem;
   padding-bottom: 4rem;
 }
-/* line 256, ../sass/main.scss */
+/* line 272, ../sass/main.scss */
 #about h2 {
   display: inline-block;
   font-size: 4rem;
   font-weight: 400;
   text-align: center;
 }
-/* line 263, ../sass/main.scss */
+/* line 279, ../sass/main.scss */
 #about .info {
   margin-left: 4rem;
   display: none;
 }
-/* line 267, ../sass/main.scss */
+/* line 283, ../sass/main.scss */
 #about .info p {
   display: block;
   max-width: 1050px;
@@ -375,13 +391,13 @@ nav {
   line-height: 1.8em;
   margin-bottom: 4rem;
 }
-/* line 281, ../sass/main.scss */
+/* line 297, ../sass/main.scss */
 #about .info ul li {
   font-size: 1.45em;
   padding-bottom: .5rem;
 }
 
-/* line 289, ../sass/main.scss */
+/* line 305, ../sass/main.scss */
 .button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -397,7 +413,7 @@ nav {
   background-color: #fff;
   padding-top: 31px;
 }
-/* line 302, ../sass/main.scss */
+/* line 318, ../sass/main.scss */
 .button:before {
   content: "";
   width: 300px;
@@ -416,7 +432,7 @@ nav {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 315, ../sass/main.scss */
+/* line 331, ../sass/main.scss */
 .button:after {
   content: "";
   width: 300px;
@@ -435,11 +451,11 @@ nav {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 330, ../sass/main.scss */
+/* line 346, ../sass/main.scss */
 .button:hover:after {
   right: 50%;
 }
-/* line 335, ../sass/main.scss */
+/* line 351, ../sass/main.scss */
 .button:hover:before {
   left: 50%;
 }
