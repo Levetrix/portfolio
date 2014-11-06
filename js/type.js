@@ -87,7 +87,13 @@ $(document).ready(function(){
 				},400);
 			},1200);
 		};
-		
+		$(document).scroll(function(){
+			if($(window).scrollTop() > 0){
+				$(".navMap").addClass("horizontal");
+			} else {
+				$(".navMap").removeClass("horizontal");
+			}
+		});
 		
 	}
 	

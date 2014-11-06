@@ -21,11 +21,6 @@ $curse: "curse words here";
 $OpenSans: "OpenSans", "OpenSans_IE";
 $OpenSansLt: "OpenSansLt", "OpenSansLt_IE";
 
-@include font-face("OpenSans", font-files("../../fonts/OpenSans-regular.ttf", "../../fonts/OpenSans-regular.ttf", "../../fonts/OpenSans-regular.ttf", "../../fonts/OpenSans-regular.ttf"));
-@include font-face("OpenSansLt", font-files("../../fonts/opensans-light-webfont.ttf", "../../fonts/opensans-light-webfont.woff", "../../fonts/opensans-light-webfont.eot", "../../fonts/opensans-light-webfont.svg"));
-@include font-face("OpenSansLt_IE", font-files("../../fonts/opensans-light-webfont.ttf", "../../fonts/opensans-light-webfont.woff", "../../fonts/opensans-light-webfont.eot", "../../fonts/opensans-light-webfont.svg"));
-@include font-face("OpenSansLtCn", font-files("../../fonts/OpenSans-CondLight.ttf", "examples/bgrove.otf"));
-@include font-face("OpenSans_IE", font-files("../../fonts/opensans-regular-webfont.eot", "examples/bgrove.otf"));
 @include font-face("RalewayThin", font-files("../../typing/fonts/Raleway-Thin.otf"));
 @include font-face("RalewayExtraLight", font-files("../../typing/fonts/Raleway-ExtraLight.otf"));
 @include font-face("RalewayLight", font-files("../../typing/fonts/Raleway-Light.otf"));
@@ -172,19 +167,35 @@ nav {
   display:block;
   position:fixed;
   top:8rem;
-  right:6rem;
-  width:6.5rem;
-  height:16rem;
+  left:calc(100% - 10rem);
+  width:auto;
+  height:0rem;
   color:#fff;
   z-index:1;
+  @include transition(left .45s ease-out,top .65s, transform .45s linear/*, -webkit-transform 2s, -moz-transform 2s, -ms-transform 2s, -o-transform 2s,*/);
   
-  &.copy {
-    right:8rem;
-    display:none;
+  
+  &.horizontal {
+    @include rotate(-90deg);
+    @include transition(left .45s ease-out,top .85s, transform .45s ease-out/*, -webkit-transform 2s, -moz-transform 2s, -ms-transform 2s, -o-transform 2s,*/);
+    top:.5rem;
+    left:28rem;
+    margin-top:1.25rem;
+    
+    & > a {
+      @include rotate(90deg);
+      margin-bottom:2rem;
+    }
+    
+    & > span {
+      @include transition-duration(.3s);
+      @include opacity(0); 
+    }
   }
   
   & > a {
     font-family:"Open Sans";    
+    @include transition-duration(.5s);
     font-weight:400;
     color:#fff;
     text-decoration:none;
@@ -215,21 +226,26 @@ nav {
   height:100vh;
   background-image: url("../img/Tyler1.jpg");
   background-position-y:70%;
+  background-position-x:100%;
+  line-height:0px;
   background-size:cover;
   position:relative;
   margin:0;
   padding:0;
-  padding-top:12rem;
-  padding-left:4rem;
   
   & h2 {
     display:block;
+    position:absolute;
     max-width:800px;
     text-align:left;
     color:white;
+    line-height:1.25em;
     font-size:4rem;
     font-weight:600;
     font-family:"RalewaySemiBold";
+    margin-top:12rem;
+    margin-left:4rem;
+    
   }
 }
 
