@@ -95,14 +95,19 @@ $(document).ready(function(){
 			}*/
 			var numAnchors = $(".navMap > a").length
 			for(i=0;i<numAnchors;i++){
-				var currentAnchor = $(function(numAnchors, i){
+				var currentAnchor = $((function(numAnchors, i){
 					return ".navMap > a:nth-of-type(" + i +")"
-				});
+				})(numAnchors,i));
 				//console.log(currentAnchor);
 				//currentAnchor.css("color", "red");
 				console.log(currentAnchor);
 				console.log(currentAnchor.css("width"));
 			}
+			$(".navMap > a").each(function(){
+				var $this = $(this);
+				console.log($this);
+				console.log($this.css("width"));
+			});
 			
 			if($(window).scrollTop() > 0){
 				$(".navMap").addClass("navTop").addClass("navLeft");
