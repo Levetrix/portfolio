@@ -87,14 +87,32 @@ $(document).ready(function(){
 				},400);
 			},1200);
 		};
-		$(document).scroll(function(){
-			if($(window).scrollTop() > 0){
+		var navScroll = function(){
+			/*if($(window).scrollTop() > 0){
 				$(".navMap").addClass("horizontal");
 			} else {
 				$(".navMap").removeClass("horizontal");
+			}*/
+			var numAnchors = $(".navMap > a").length
+			for(i=0;i<numAnchors;i++){
+				var currentAnchor = $(function(numAnchors, i){
+					return ".navMap > a:nth-of-type(" + i +")"
+				});
+				//console.log(currentAnchor);
+				//currentAnchor.css("color", "red");
+				console.log(currentAnchor);
+				console.log(currentAnchor.css("width"));
 			}
-		});
-		
+			
+			if($(window).scrollTop() > 0){
+				$(".navMap").addClass("navTop").addClass("navLeft");
+			} else {
+				$(".navMap").removeClass("navTop").removeClass("navLeft");
+			}
+		};
+
+		$(document).scroll(navScroll);
+
 	}
 	
 	//$(".postload").css("display", "none").css("opacity", "0");

@@ -1,50 +1,160 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 @CHARSET "ISO-8859-1";
+/***
+* CSS3 FLIP CARDS
+* Markup for an element that a user can hover to reveal content on the back, like a card
+* Browser Support: Safari, Firefox, Chrome, IE8+, and Touch Devices; (IE9 and below will not have any flip effect but will just change on hover)
+***/
+/* line 9, ../sass/transform/_flip.scss */
+.flip-card {
+  display: block;
+  position: relative;
+  z-index: 1000;
+}
+/* line 15, ../sass/transform/_flip.scss */
+.flip-card .card-front,
+.flip-card .card-back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 900ms;
+  -moz-transition: -moz-transform 900ms;
+  -o-transition: -o-transform 900ms;
+  transition: transform 900ms;
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+/* line 24, ../sass/transform/_flip.scss */
+.flip-card .card-front {
+  -webkit-transform: perspective(600) rotateY(0deg) translateX(0);
+  -moz-transform: perspective(600) rotateY(0deg) translateX(0);
+  -ms-transform: perspective(600) rotateY(0deg) translateX(0);
+  -o-transform: perspective(600) rotateY(0deg) translateX(0);
+  transform: perspective(600) rotateY(0deg) translateX(0);
+  z-index: 900;
+}
+/* line 29, ../sass/transform/_flip.scss */
+.flip-card .card-back {
+  -webkit-transform: perspective(600) rotateY(-180deg) translateX(100%);
+  -moz-transform: perspective(600) rotateY(-180deg) translateX(100%);
+  -ms-transform: perspective(600) rotateY(-180deg) translateX(100%);
+  -o-transform: perspective(600) rotateY(-180deg) translateX(100%);
+  transform: perspective(600) rotateY(-180deg) translateX(100%);
+  /*
+  	@include create-transform(false, 0.7, 0.7, 0.7, 0, -180deg);	//	, 0, true, 289px, 0, 0, 0, 0, 0, 289px
+  */
+  z-index: 800;
+}
+/* line 38, ../sass/transform/_flip.scss */
+.flip-card:hover .card-front, .flip-card.flip-card-now .card-front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* line 42, ../sass/transform/_flip.scss */
+.flip-card:hover .card-back, .flip-card.flip-card-now .card-back {
+  z-index: 950;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
 
+/*** Just for show... ***/
+/* line 55, ../sass/transform/_flip.scss */
+.flip-card {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  color: #fff;
+  cursor: pointer;
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 100px;
+  max-width: 400px;
+  /*.card-back,*/
+}
+/* line 67, ../sass/transform/_flip.scss */
+.flip-card .card-front,
+.flip-card .card-back {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 71, ../sass/transform/_flip.scss */
+.flip-card .card-front {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 75, ../sass/transform/_flip.scss */
+.flip-card .card-shadow {
+  -webkit-box-shadow: 0 0 80px rgba(0, 0, 0, 0.8) inset;
+  -moz-box-shadow: 0 0 80px rgba(0, 0, 0, 0.8) inset;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.8) inset;
+  /*background-color: #499bea; // Old browsers*/
+}
 
 @font-face {
   font-family: "RalewayThin";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-Thin.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-Thin.otf') format('opentype');
 }
 
 @font-face {
   font-family: "RalewayExtraLight";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-ExtraLight.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-ExtraLight.otf') format('opentype');
 }
 
 @font-face {
   font-family: "RalewayLight";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-Light.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-Light.otf') format('opentype');
 }
 
 @font-face {
   font-family: "RalewayRegular";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-Regular.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: "RalewayMedium";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-Medium.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-Medium.otf') format('opentype');
 }
 
 @font-face {
   font-family: "RalewaySemiBold";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-SemiBold.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-SemiBold.otf') format('opentype');
 }
 
 @font-face {
   font-family: "RalewayBold";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-Bold.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-Bold.otf') format('opentype');
 }
 
 @font-face {
   font-family: "RalewayExtraBold";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-ExtraBold.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-ExtraBold.otf') format('opentype');
 }
 
 @font-face {
   font-family: "RalewayHeavy";
-  src: url('/stylesheets/fonts/../../portfolio/fonts/Raleway-Heavy.otf') format('opentype');
+  src: url('/stylesheets/fonts/../../typing/fonts/Raleway-Heavy.otf') format('opentype');
 }
 
 /* line 36, ../sass/main.scss */
@@ -236,7 +346,7 @@ nav {
   left: 0;
   width: 100%;
   height: 4.0rem;
-  background-color: rgba(51, 51, 51, 0.97);
+  background-color: #333333;
   z-index: 1;
 }
 
@@ -244,18 +354,39 @@ nav {
 .navMap {
   display: block;
   position: fixed;
-  top: 8rem;
+  padding-top: 8rem;
+  top: 0;
   left: calc(100% - 10rem);
   width: auto;
   height: 0rem;
   color: #fff;
   z-index: 1;
-  -webkit-transition: left 0.45s ease-out, top 0.65s, -webkit-transform 0.45s linear;
-  -moz-transition: left 0.45s ease-out, top 0.65s, -moz-transform 0.45s linear;
-  -o-transition: left 0.45s ease-out, top 0.65s, -o-transform 0.45s linear;
-  transition: left 0.45s ease-out, top 0.65s, transform 0.45s linear;
+  -webkit-transition: padding-top 0.45s ease-out, left 0.45s ease-out, top 0.65s, -webkit-transform 0.45s linear;
+  -moz-transition: padding-top 0.45s ease-out, left 0.45s ease-out, top 0.65s, -moz-transform 0.45s linear;
+  -o-transition: padding-top 0.45s ease-out, left 0.45s ease-out, top 0.65s, -o-transform 0.45s linear;
+  transition: padding-top 0.45s ease-out, left 0.45s ease-out, top 0.65s, transform 0.45s linear;
 }
 /* line 178, ../sass/main.scss */
+.navMap.navTop {
+  padding-top: 1.25rem;
+}
+/* line 182, ../sass/main.scss */
+.navMap.navTop > span {
+  opacity: 0;
+  line-height: 0;
+  height: 0;
+  padding: 0;
+}
+/* line 189, ../sass/main.scss */
+.navMap.navTop > a {
+  height: 0;
+  padding: 0;
+}
+/* line 193, ../sass/main.scss */
+.navMap.navTop > a:nth-of-type(1) {
+  margin-top: -5rem;
+}
+/* line 200, ../sass/main.scss */
 .navMap.horizontal {
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -270,7 +401,7 @@ nav {
   left: 28rem;
   margin-top: 1.25rem;
 }
-/* line 185, ../sass/main.scss */
+/* line 207, ../sass/main.scss */
 .navMap.horizontal > a {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -279,7 +410,7 @@ nav {
   transform: rotate(90deg);
   margin-bottom: 2rem;
 }
-/* line 190, ../sass/main.scss */
+/* line 212, ../sass/main.scss */
 .navMap.horizontal > span {
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
@@ -288,7 +419,17 @@ nav {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 196, ../sass/main.scss */
+/* line 218, ../sass/main.scss */
+.navMap > .navPort {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  height: 4rem;
+  width: 15rem;
+  background-color: #333333;
+}
+/* line 229, ../sass/main.scss */
 .navMap > a {
   font-family: "Open Sans";
   -webkit-transition-duration: 0.5s;
@@ -305,9 +446,13 @@ nav {
   padding-top: .35rem;
   font-size: 1.1rem;
 }
-/* line 210, ../sass/main.scss */
+/* line 243, ../sass/main.scss */
 .navMap > span {
   font-family: "RalewayRegular";
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   display: block;
   text-align: center;
   line-height: 1px;
@@ -317,7 +462,7 @@ nav {
   height: .8rem;
 }
 
-/* line 222, ../sass/main.scss */
+/* line 256, ../sass/main.scss */
 #myFace {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -333,7 +478,7 @@ nav {
   margin: 0;
   padding: 0;
 }
-/* line 236, ../sass/main.scss */
+/* line 270, ../sass/main.scss */
 #myFace h2 {
   display: block;
   position: absolute;
@@ -348,17 +493,17 @@ nav {
   margin-left: 4rem;
 }
 
-/* line 252, ../sass/main.scss */
+/* line 286, ../sass/main.scss */
 .shader {
   width: 100%;
   height: 100%;
-  background-color: rgba(51, 51, 51, 0.25);
+  background-color: rgba(51, 51, 51, 0.1);
   position: absolute;
   margin: 0;
   padding: 0;
 }
 
-/* line 261, ../sass/main.scss */
+/* line 295, ../sass/main.scss */
 #about {
   max-width: 100%;
   min-height: 500px;
@@ -369,19 +514,19 @@ nav {
   padding-left: 4rem;
   padding-bottom: 4rem;
 }
-/* line 272, ../sass/main.scss */
+/* line 306, ../sass/main.scss */
 #about h2 {
   display: inline-block;
   font-size: 4rem;
   font-weight: 400;
   text-align: center;
 }
-/* line 279, ../sass/main.scss */
+/* line 313, ../sass/main.scss */
 #about .info {
   margin-left: 4rem;
- // display: none;
+  display: none;
 }
-/* line 283, ../sass/main.scss */
+/* line 317, ../sass/main.scss */
 #about .info p {
   display: block;
   max-width: 1050px;
@@ -391,13 +536,13 @@ nav {
   line-height: 1.8em;
   margin-bottom: 4rem;
 }
-/* line 297, ../sass/main.scss */
+/* line 331, ../sass/main.scss */
 #about .info ul li {
   font-size: 1.45em;
   padding-bottom: .5rem;
 }
 
-/* line 305, ../sass/main.scss */
+/* line 339, ../sass/main.scss */
 .button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -413,7 +558,7 @@ nav {
   background-color: #fff;
   padding-top: 31px;
 }
-/* line 318, ../sass/main.scss */
+/* line 352, ../sass/main.scss */
 .button:before {
   content: "";
   width: 300px;
@@ -432,7 +577,7 @@ nav {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 331, ../sass/main.scss */
+/* line 365, ../sass/main.scss */
 .button:after {
   content: "";
   width: 300px;
@@ -451,11 +596,11 @@ nav {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 346, ../sass/main.scss */
+/* line 380, ../sass/main.scss */
 .button:hover:after {
   right: 50%;
 }
-/* line 351, ../sass/main.scss */
+/* line 385, ../sass/main.scss */
 .button:hover:before {
   left: 50%;
 }

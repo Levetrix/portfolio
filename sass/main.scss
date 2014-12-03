@@ -44,7 +44,7 @@ html, body {
 }
 
 body {
-	font-family:"OpenSans";
+	font-family:"Open Sans"; 
 	font-weight:200; 
 }
 
@@ -159,21 +159,43 @@ nav {
   left:0;
   width:100%;
   height:4.0rem;
-  background-color:rgba($charcoal,.97);
+  background-color:rgba($charcoal,1);
   z-index:1;
 }
 
 .navMap {
   display:block;
   position:fixed;
-  top:8rem;
+  padding-top:8rem;
+  top:0;
   left:calc(100% - 10rem);
   width:auto;
   height:0rem;
   color:#fff;
   z-index:1;
-  @include transition(left .45s ease-out,top .65s, transform .45s linear/*, -webkit-transform 2s, -moz-transform 2s, -ms-transform 2s, -o-transform 2s,*/);
+  @include transition(padding-top .45s ease-out, left .45s ease-out,top .65s, transform .45s linear/*, -webkit-transform 2s, -moz-transform 2s, -ms-transform 2s, -o-transform 2s,*/);
   
+  &.navTop{
+    padding-top:1.25rem;
+    
+    
+    & > span {
+      opacity:0;
+      line-height:0;
+      height:0;
+      padding:0;
+    }
+    
+    & > a {
+      height:0;
+      padding:0;
+      
+      &:nth-of-type(1){
+        margin-top:-5rem;
+        
+      }
+    }
+  }  
   
   &.horizontal {
     @include rotate(-90deg);
@@ -193,6 +215,17 @@ nav {
     }
   }
   
+  & > .navPort {
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:5;
+    height:4rem;
+    width:15rem;
+    background-color:$charcoal;
+    
+  }
+  
   & > a {
     font-family:"Open Sans";    
     @include transition-duration(.5s);
@@ -208,7 +241,8 @@ nav {
   }
   
   & > span {
-    font-family:"RalewayRegular";    
+    font-family:"RalewayRegular";        
+    @include transition-duration(.5s);
     display:block;
     text-align:center;
     line-height:1px;
@@ -252,7 +286,7 @@ nav {
 .shader {
   width:100%;
   height:100%;
-  background-color:rgba($charcoal,.25);
+  background-color:rgba($charcoal,.1);
   position:absolute;
   margin:0;
   padding:0;
